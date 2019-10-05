@@ -84,7 +84,7 @@ A ideia básica do ggplot é a de que um gráfico é construído a partir de camadas 
 
 <center><div style="width: 50%;">
 
- <p style="border:3px; border-style:dashed; border-color:#FF4136; padding: 1em;font-size:40px;"> **O JAIR FEZ UM PÉSSIMO DISCURSO** </p>
+ <p style="border:3px; border-style:dashed; border-color:#FF4136; padding: 1em;font-size:40px;"> **A turma está super animada para aprender os próximos códigos** </p>
 </div></center>
 
 &nbsp;
@@ -107,7 +107,7 @@ Se os adjetivos, verbos, ou substantivos fossem alterados, o sentido da frase se
 &nbsp;
 &nbsp;
 
-O primeira camada é a base de dados utilizada para plotar os gráficos. Obviamente, isso ainda não é suficiente para criar um gráfico
+A primeira camada é a base de dados utilizada para plotar os gráficos. Obviamente, isso ainda não é suficiente para criar um gráfico
 
 
 ```{r include = FALSE}
@@ -162,7 +162,7 @@ ggplot(data=jn1, mapping=aes(x=ano, y=media))
 &nbsp;
 &nbsp;
 
-A 3º camada (Geometria) é a responsável pelos elementos visuais do gráfico
+A terceira camada (Geometria) é a responsável pelos elementos visuais do gráfico
 
 ```{r fig.align='center'}
 
@@ -268,7 +268,7 @@ ggplot(data=jn1, mapping=aes(x=ano, y=media))+
 &nbsp;
 &nbsp;
 
-A camada Facet pertmite criar permite dividir o gráfico criado a partir de uma terceira variável
+A quarta camada, Facet, permite dividir o gráfico criado a partir de uma terceira variável
 
 ```{r fig.align='center'}
 jn1 <- group_by(jn, ano, justica)
@@ -347,7 +347,7 @@ jn1 <- filter(jn1, ano==2018)
 
 ggplot(data=jn1, mapping=aes(x=ano, y=media,fill=justica))+
   geom_col()+
-  coord_polar(theta = "x") #variável que será "angularizada""
+  coord_polar(theta = "x") #variável que será "angularizada"
 ```
 
 ## Trocando de coordenadas
@@ -445,7 +445,7 @@ jn1 <- filter(jn1, !sigla %in% c("TJ", "TRF", "TRT", "TRE"))
 ggplot(data=jn1, mapping=aes(x=sigla, y=media))+
   geom_col()+
   ggtitle("Teste")+
-  theme(axis.title = element_text(color = "red", hjust = 0.5, face = "bold", family= "Times"),
+  theme(axis.title = element_text(color = "red", hjust = 0.5, face = "bold", family= "serif"),
         axis.text.x = element_text(color = "black", angle = 45, family="sans"),
         plot.title = element_text(color="blue", face="bold", hjust=0.5, family="serif", size=20))
   
@@ -990,3 +990,17 @@ p <- ggplot(data=jn1, mapping=aes(x=serv, y=sent, color=sigla))+
 p + transition_time(ano) +
   labs(title = "Ano: {frame_time}")
 ```
+
+
+## Fim
+
+&nbsp;
+&nbsp;
+
+<div style="width: 100%;">
+
+ <p style="font-size:40px;"> <center> Caminhante, não há caminho </center> </br> <center>  O caminho se faz ao caminhar </center> </p> 
+
+*Antônio Machado*, poeta espanhol
+
+</div>
