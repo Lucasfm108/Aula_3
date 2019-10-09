@@ -100,6 +100,26 @@ Se os adjetivos, verbos, ou substantivos fossem alterados, o sentido da frase se
 <center><img src="camadas.png" width = "100%" height="700px" /></center>
 
 
+## Revisão de Dplyr
+
+&nbsp;
+&nbsp;
+
+```{r include=FALSE}
+library(kableExtra)
+```
+
+
+```{r echo=FALSE}
+
+dplyr_table <- data.frame("Função" =c("filter()", "select()", "slice()", "arrange()", "mutate()", "summarise()", "group_by()"), Finalidade=c("Filtar a planilha a partir dos valores de determinadas colunas", "Selecionar colunas", "Selecionar linhas", "Classificar/ordenar a planilha a partir de determinadas colunas","Criar uma nova coluna na planilha", "Calcular as estatísticas (média, soma, etc.) das colunas das planilhas", "Agrupar a base pelos valores de determinadas colunas. Feito isso, todas as funções anteriores se aplicam aos grupos criados"))
+kable(dplyr_table) %>%
+  kable_styling(full_width = F) %>%
+  column_spec(1, bold = T,width = "10em", border_right = T) %>%
+  column_spec(2, width = "60em")
+```
+
+
 # 1ª Camada: Dados
 
 ## Qual é a base a ser utilizada?
