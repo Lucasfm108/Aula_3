@@ -371,12 +371,10 @@ ggplot(data=jn1, mapping=aes(x=sigla, y=media))+
 &nbsp;
 
 ```{r fig.align='center'}
-jn1 <- group_by(jn, ano, justica)
+jn1 <- group_by(jn, justica)
 jn1 <- summarise(jn1, media=mean(ftt, na.rm = T))
-jn1 <- filter(jn1, ano==2018)
 
-
-ggplot(data=jn1, mapping=aes(x=ano, y=media,fill=justica))+
+ggplot(data=jn1, mapping=aes(x=1, y=media, fill=justica))+
   geom_col()+
   coord_polar(theta = "x") #Eixo que será "angularizado"
 ```
@@ -387,15 +385,12 @@ ggplot(data=jn1, mapping=aes(x=ano, y=media,fill=justica))+
 &nbsp;
 
 ```{r fig.align='center'}
-jn1 <- group_by(jn, ano, justica)
+jn1 <- group_by(jn, justica)
 jn1 <- summarise(jn1, media=mean(ftt, na.rm = T))
-jn1$media <- round(jn1$media, 2)
-jn1 <- filter(jn1, ano==2018)
 
-
-ggplot(data=jn1, mapping=aes(x=ano, y=media,fill=justica))+
+ggplot(data=jn1, mapping=aes(x=1, y=media, fill=justica))+
   geom_col()+
-  coord_polar(theta="y")
+  coord_polar(theta = "y") #Eixo que será "angularizado"
 ```
 
 # 6º Camada: Tema
